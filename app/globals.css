@@ -1,0 +1,87 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --primary: #004225;
+    --primary-light: #005a31;
+    --primary-dark: #002a16;
+    --accent: #F7E7CE;
+    --accent-gold: #D4AF37;
+    --accent-dark: #C28840;
+    --text-dark: #1A1A1A;
+    --text-light: #FFFDF7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-luxury-ivory text-luxury-charcoal;
+  }
+}
+
+@layer components {
+  .luxury-card {
+    @apply bg-luxury-ivory rounded-lg shadow-luxury border border-luxury-gold/10 overflow-hidden transition-all duration-300 hover:shadow-luxury-deep;
+  }
+
+  .luxury-button {
+    @apply px-6 py-3 bg-luxury-gold-royal text-luxury-charcoal rounded-lg font-semibold hover:bg-luxury-gold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .luxury-button-outline {
+    @apply px-6 py-3 border-2 border-luxury-gold text-luxury-gold rounded-lg font-semibold hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-serif font-bold text-luxury-green mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg text-luxury-charcoal/70 mb-12;
+  }
+
+  .in-view {
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-luxury-green to-luxury-gold bg-clip-text text-transparent;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(247, 231, 206, 0) 0%,
+      rgba(247, 231, 206, 0.8) 50%,
+      rgba(247, 231, 206, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
